@@ -20,13 +20,11 @@ const images = galleryItems.map(({ preview, original, description }) =>
 
 galleryArr.insertAdjacentHTML('beforeend', images)
 
-const handleClick = (event) => {
-    
+const handleClick = (event) => {   
  // прибираємо дію браузера за замовчуванням
     event.preventDefault();
 
     openAndCloseModal(event)
-
 };
 
 galleryArr.addEventListener("click", handleClick);
