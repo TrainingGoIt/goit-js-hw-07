@@ -11,22 +11,10 @@ const images = galleryItems.map(({ preview, original, description }) =>
 
 galleryArr.insertAdjacentHTML('beforeend', images)
 
-lightboxFunction()
-
-function handleClick(event) {
-    //прибираємо дію браузера за замовчуванням
-    event.preventDefault();
-}
-
-function lightboxFunction() {
-
   let gallery = new SimpleLightbox('.gallery a', {fadeSpeed: 250});
     gallery.on('show.simplelightbox', function () {
     });
    
-}
-
-galleryArr.addEventListener("click", handleClick);
 
 // Підключення скрипту і стилів бібліотеки, використовуючи CDN сервіс
 // cdnjs.Необхідно додати посилання на два файли:
