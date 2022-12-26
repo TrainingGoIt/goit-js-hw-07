@@ -12,6 +12,7 @@ const images = galleryItems.map(({ preview, original, description }) =>
 galleryArr.insertAdjacentHTML('beforeend', images)
 
 lightboxFunction()
+
 function handleClick(event) {
     //прибираємо дію браузера за замовчуванням
     event.preventDefault();
