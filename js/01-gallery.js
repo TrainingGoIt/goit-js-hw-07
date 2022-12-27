@@ -32,17 +32,23 @@ galleryArr.addEventListener("click", handleClick);
 function openAndCloseModal(event) {
  if (!event.target.classList.contains("gallery__image")) return;
     const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="100vw" height="100vh">
-`)
+    <img src="${event.target.dataset.source}" width="100vw" height="100vh">`
+        , {
+		onShow: () => document.addEventListener("keydown", onEscapePress),
+        onClose: () => document.removeEventListener("keydown", onEscapePress)
+        }
+    )
     instance.show()
-
-document.addEventListener("keydown", event => {
-if (event.code === "Escape") {
-    instance.close()
-}
-
-});
- 
+    
+    function onEscapePress(event) {
+    if (event.code === "Escape") {
+            console.log(`клавіша: escape`)
+            instance.close()
+        }
+        else console.log(`jbjklnkn`);
+      
+    }
+       
 };
 
 
